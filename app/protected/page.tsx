@@ -1,7 +1,8 @@
-import FetchDataSteps from "@/components/tutorial/fetch-data-steps";
+
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
 import { InfoIcon } from "lucide-react";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function ProtectedPage() {
@@ -30,11 +31,10 @@ export default async function ProtectedPage() {
           {JSON.stringify(user, null, 2)}
         </pre>
       </div>
-      <Button>Start your first blank</Button>
-      {/* <div>
-        <h2 className="font-bold text-2xl mb-4">Next steps</h2>
-        <FetchDataSteps />
-      </div>*/}
+      <Link href={"/doc/1"}  ><Button>Start your first blank</Button>
+      </Link>
+
+
     </div>
   );
 }

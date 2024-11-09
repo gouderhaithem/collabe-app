@@ -4,19 +4,6 @@ import { encodedRedirect } from "@/utils/utils";
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { supabase } from "@/lib/utils";
-
-export async function signInWithGoogle() {
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "google",
-    // options: {
-    //     // redirectTo: getURL() // function to get your URL
-    // }
-  });
-}
-export async function signOut() {
-  const signOut = await supabase.auth.signOut();
-}
 
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
