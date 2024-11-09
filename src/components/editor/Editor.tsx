@@ -10,19 +10,25 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 import { Button } from '@/components/ui/button';
-import ShareModal from '@/components/ShareModal';
+
 import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
+import ShareModal from '@/components/shareModal';
 
 function Placeholder() {
   return <div className="editor-placeholder">Enter some rich text...</div>;
 }
-
+type User = {
+  id: string;
+  aud: string;
+  email?: string;
+  // Add other properties as needed based on Supabase's user object structure
+};
 export function Editor() {
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [title, setTitle] = useState('title');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null); // Specify User | null
   const router = useRouter();
 
   useEffect(() => {
