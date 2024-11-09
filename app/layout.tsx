@@ -37,7 +37,7 @@ export default function RootLayout({
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
                 <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
                   <div className="flex gap-5 items-center font-semibold">
-                    <Link href={"/"}>Next.js Supabase Starter</Link>
+                    <Link href={"/"} className="text-3xl">Collab APP</Link>
 
                   </div>
                   {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
@@ -47,20 +47,32 @@ export default function RootLayout({
                 {children}
               </div>
 
-              <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
-                <p>
-                  Powered by{" "}
-                  <a
-                    href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-                    target="_blank"
-                    className="font-bold hover:underline"
-                    rel="noreferrer"
-                  >
-                    Supabase
-                  </a>
-                </p>
-                <ThemeSwitcher />
+              <footer className="w-full border-t py-8  text-gray-400">
+                <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4 text-center md:text-left">
+                  <p className="text-sm">
+                    Created by{" "}
+                    <span className="font-semibold text-white">
+                      Haithem
+                    </span>
+                  </p>
+                  <div className="flex items-center gap-6">
+                    <a
+                      href="#"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      Privacy Policy
+                    </a>
+                    <a
+                      href="#"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      Terms of Service
+                    </a>
+                    <ThemeSwitcher />
+                  </div>
+                </div>
               </footer>
+
             </div>
           </main>
         </ThemeProvider>
